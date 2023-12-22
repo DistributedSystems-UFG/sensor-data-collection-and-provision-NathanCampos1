@@ -26,6 +26,8 @@ public class AccessSensorsActivity extends AppCompatActivity {
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         TextView textView = (TextView) findViewById(R.id.textViewLuminosity);
+        TextView textViewTemperature = findViewById(R.id.textViewProximity); // Adicione um novo TextView no seu layout para isso
+
         //mTemperature = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
         //List<Sensor> deviceSensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
         //EditText sensorInfoField = (EditText) findViewById(R.id.editTextSensorInfo);
@@ -33,6 +35,7 @@ public class AccessSensorsActivity extends AppCompatActivity {
 
         LightSensorAccess lightSensorAccess = new LightSensorAccess(sensorManager, textView);
 
+        ProximitySensorAccess temperatureSensorAccess = new ProximitySensorAccess(sensorManager, textViewTemperature);
 
     }
 
